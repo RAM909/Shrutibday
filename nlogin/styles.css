@@ -1,0 +1,442 @@
+/**
+ * Variables definition
+ */
+/* ------------------------------------------------------------------------- */
+html, body {
+	width: 100%;
+	height: 100%;
+	font-size: 10px;
+	font-family: "Helvetica Neue", "Microsoft YaHei UI", Arial, sans-serif;
+	letter-spacing: 0.35rem;
+	overflow: hidden;
+}
+.cl-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	/*background: #7f63ff;*/
+    background-image: url(6.webp);
+    background-size: contain;
+    background-blend-mode: overlay;
+  }
+  .cl-container .cl-frame-login, .cl-container .cl-frame-reg, .cl-container .cl-frame-empty {
+	width: 300px;
+	height: 350px;
+	padding: 6rem;
+	border-radius: 20px;
+	box-shadow: 0 1rem 5rem #262626;
+  }
+  .cl-container .cl-container-frames {
+	position: relative;
+	width: 42rem;
+	height: 47rem;
+	padding: 6rem;
+  }
+  .cl-container .cl-container-frames .cl-frame-switch-btn {
+	position: absolute;
+	top: 10rem;
+	right: 2rem;
+	z-index: 5;
+	width: 8rem;
+	height: 8rem;
+	padding: 0;
+	color: #ffffff;
+	text-align: center;
+	background: #eb2e57;
+	border: none;
+	border-radius: 50%;
+	box-shadow: 0 0 3rem #0c0c0c;
+  }
+  .cl-container .cl-container-frames .cl-frame-switch-btn .cl-icon-plus {
+	display: inline-block;
+	width: 8rem;
+	height: 8rem;
+	background: linear-gradient(90deg, #ffffff 100%, transparent) no-repeat, linear-gradient(0, #ffffff 100%, transparent) no-repeat;
+	background-position: center center, center center;
+	background-size: 1.5rem 0.3rem, 0.3rem 1.5rem;
+  }
+  .cl-container .cl-container-frames .cl-frame-login, .cl-container .cl-container-frames .cl-frame-reg, .cl-container .cl-container-frames .cl-frame-empty {
+	position: absolute;
+  }
+  .cl-container .cl-container-frames .cl-frame-reg-title, .cl-container .cl-container-frames .cl-frame-login-title {
+	position: relative;
+	margin-top: 0;
+	margin-bottom: 2rem;
+	font-size: 3.5rem;
+  }
+  .cl-container .cl-container-frames .cl-frame-reg-title:before, .cl-container .cl-container-frames .cl-frame-login-title:before {
+	position: absolute;
+	left: -6rem;
+	content: '';
+	display: block;
+	width: 0.5rem;
+	height: 4rem;
+  }
+  .cl-container .cl-container-frames .cl-frame-login {
+	z-index: 2;
+	background: #ffffff;
+  }
+  .cl-container .cl-container-frames .cl-frame-login .cl-frame-login-title {
+	color: #eb2e57;
+  }
+  .cl-container .cl-container-frames .cl-frame-login .cl-frame-login-title:before {
+	background: #eb2e57;
+  }
+  .cl-container .cl-container-frames .cl-frame-login .cl-form-group .cl-form-label {
+	color: #a5a5a5;
+  }
+  .cl-container .cl-container-frames .cl-frame-login .cl-form-group input {
+	color: #a5a5a5;
+	border-bottom: 0.2rem solid #f2f2f2;
+  }
+  .cl-container .cl-container-frames .cl-frame-login .cl-form-group .cl-login-hint {
+	margin: 0;
+	font-size: 1.8rem;
+	font-weight: 100;
+	letter-spacing: 1px;
+	color: #a5a5a5;
+  }
+  .cl-container .cl-container-frames .cl-frame-reg {
+	z-index: 3;
+	background: #eb2e57;
+	opacity: 0;
+	transform: scale(0, 0);
+  }
+  .cl-container .cl-container-frames .cl-frame-reg .cl-frame-reg-title {
+	color: #ffffff;
+  }
+  .cl-container .cl-container-frames .cl-frame-reg .cl-frame-reg-title:before {
+	background: #ffffff;
+  }
+  .cl-container .cl-container-frames .cl-frame-reg .cl-form-group .cl-form-label {
+	color: #ffffff;
+  }
+  .cl-container .cl-container-frames .cl-frame-reg .cl-form-group input {
+	color: #ffffff;
+  }
+  .cl-container .cl-container-frames .cl-frame-empty {
+	top: 3rem;
+	z-index: 1;
+	background: #ffffff;
+	opacity: 0.8;
+	transform: scale(0.95);
+  }
+  .cl-form {
+	display: block;
+  }
+  .cl-form .cl-form-group {
+	position: relative;
+	padding: 2rem 0;
+  }
+  .cl-form .cl-form-group .cl-input-focus-line {
+	position: absolute;
+	bottom: 2rem;
+	width: 0;
+	height: 0.2rem;
+	background: #eb2e57;
+  }
+  .cl-form .cl-form-group input {
+	display: block;
+	width: 100%;
+	font-size: 2rem;
+	font-weight: 100;
+	background: transparent;
+	border: none;
+	border-bottom: 0.2rem solid #eeeeee;
+  }
+  .cl-form .cl-form-group input, .cl-form .cl-form-group input:focus {
+	outline: none;
+  }
+  .cl-form .cl-form-group .cl-form-label {
+	position: absolute;
+	z-index: -1;
+	font-size: 2rem;
+	font-weight: lighter;
+  }
+  .cl-hor-center {
+	text-align: center;
+  }
+  .cl-btn {
+	padding: 1.5rem 6rem;
+	color: #eb2e57;
+	font-size: 1.5rem;
+	background: transparent;
+  }
+  .cl-btn, .cl-btn:hover, .cl-btn:focus, .cl-btn:active {
+	cursor: pointer;
+	outline: none;
+  }
+  .cl-btn-reg, .cl-btn-login {
+	border: none;
+	overflow: hidden;
+  }
+  .cl-btn-reg {
+	background: #ffffff;
+  }
+  .cl-btn-login {
+	position: relative;
+	margin-top: 1rem;
+	color: #a5a5a5;
+	border: 2px solid #eeeeee;
+	transition: all 0.3s ease-in;
+  }
+  .cl-btn button:hover {
+	padding: 1.7rem 6.5rem;
+  }
+  
+  .cl-btn-login .cl-btn-icon-login-success {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #eb2e57;
+  }
+  .hints{
+	margin-top: 50px;
+	transition: all 0.2s ease-in-out;
+  }
+  .hide {
+	position: relative;
+	left: 220px;
+	bottom: 22px;
+	border-radius: 10px;
+	font-size: 1.5rem;
+	font-weight: 700;
+	background-color: antiquewhite;
+  }
+  .line {
+	color: white;
+	font-size: 1.5rem;
+  }
+  #hint1 {
+	display: none;
+	font-weight: 400;
+  }
+  #hint2 {
+	display: none;
+	font-weight: 400;
+}
+  #hint3 {
+	display: none;
+	font-weight: 400;
+}
+  .cl-animation {
+	animation-fill-mode: forwards;
+  }
+  .cl-animation-scale-down-in {
+	transform-origin: left bottom;
+	animation-duration: 0.3s;
+	animation-name: scaleDownIn;
+	animation-timing-function: ease;
+  }
+  .cl-animation-scale-up-out {
+	transform-origin: left top;
+	animation-duration: 0.3s;
+	animation-name: scaleUpOut;
+	animation-timing-function: ease;
+  }
+  .cl-animation-focus-in-long {
+	transform-origin: center center;
+	animation-duration: 0.3s;
+	animation-name: focusInLong;
+	animation-timing-function: ease;
+  }
+  .cl-animation-focus-out-short {
+	transform-origin: center, center;
+	animation-duration: 0.3s;
+	animation-name: focusOutShort;
+	animation-timing-function: ease;
+  }
+  .cl-animation-spread-in {
+	transform-origin: right 5rem;
+	animation-duration: 0.5s;
+	animation-name: spreadIn;
+	animation-timing-function: ease;
+  }
+  .cl-animation-spread-out {
+	transform-origin: right 5rem;
+	animation-duration: 0.5s;
+	animation-name: spreadOut;
+	animation-timing-function: ease;
+  }
+  .cl-animation-center-rotate-in {
+	transform-origin: center center;
+	animation-duration: 0.5s;
+	animation-name: centerRotateIn;
+	animation-timing-function: ease;
+  }
+  .cl-animation-rotate-out {
+	transform-origin: center center;
+	animation-duration: 0.5s;
+	animation-name: centerRotateOut;
+	animation-timing-function: ease;
+  }
+  .cl-animation-rotate-round-in {
+	transform-origin: center center;
+	animation-duration: 0.5s;
+	animation-name: rotateRoundIn;
+	animation-timing-function: ease;
+  }
+  .cl-animation-rotate-round-out {
+	transform-origin: center center;
+	animation-duration: 0.5s;
+	animation-name: rotateRoundOut;
+	animation-timing-function: ease;
+  }
+  .cl-animation-panel-scale-in {
+	transform-origin: center center;
+	animation-duration: 0.5s;
+	animation-name: panelScaleIn;
+	animation-timing-function: ease;
+	animation-delay: -0.08s;
+  }
+  .cl-animation-panel-scale-out {
+	transform-origin: center center;
+	animation-duration: 0.5s;
+	animation-name: panelScaleOut;
+	animation-timing-function: ease;
+	animation-delay: 0.08s;
+  }
+  .cl-animation-empty-panel-scale-out {
+	transform-origin: center center;
+	animation-duration: 0.5s;
+	animation-name: emptyPanelScaleOut;
+	animation-timing-function: ease;
+  }
+  .cl-animation-empty-panel-scale-in {
+	transform-origin: center center;
+	animation-duration: 0.5s;
+	animation-name: emptyPanelScaleIn;
+	animation-timing-function: ease;
+  }
+  @keyframes scaleDownIn {
+	0% {
+	  transform: translate(0, -2.2rem) scale(0.7);
+	}
+	100% {
+	  transform: translate(0, 0) scale(1);
+	}
+  }
+  @keyframes scaleUpOut {
+	0% {
+	  transform: translate(0, 0) scale(1);
+	}
+	100% {
+	  transform: translate(0, -2.2rem) scale(0.7);
+	}
+  }
+  @keyframes focusInLong {
+	0% {
+	  width: 0;
+	}
+	100% {
+	  width: 100%;
+	}
+  }
+  @keyframes focusOutShort {
+	0% {
+	  width: 100%;
+	}
+	100% {
+	  width: 0;
+	}
+  }
+  @keyframes spreadIn {
+	0% {
+	  border-radius: 50%;
+	  opacity: 0;
+	  transform: scale(0, 0);
+	}
+	50% {
+	  border-radius: 20px;
+	  opacity: 1;
+	  transform: scale(1.1, 1.1);
+	}
+	100% {
+	  border-radius: 20px;
+	  opacity: 1;
+	  transform: scale(1, 1);
+	}
+  }
+  @keyframes spreadOut {
+	0% {
+	  border-radius: 20px;
+	  transform: scale(1, 1);
+	  opacity: 1;
+	}
+	100% {
+	  border-radius: 50%;
+	  opacity: 0;
+	  transform: scale(0, 0);
+	}
+  }
+  @keyframes centerRotateIn {
+	0% {
+	  color: #a5a5a5;
+	  background: #ffffff;
+	}
+	100% {
+	  color: #ffffff;
+	  background: #eb2e57;
+	}
+  }
+  @keyframes centerRotateOut {
+	0% {
+	  color: #ffffff;
+	  background: #eb2e57;
+	}
+	100% {
+	  color: #a5a5a5;
+	  background: #a5a5a5;
+	}
+  }
+  @keyframes rotateRoundIn {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(135deg);
+	}
+  }
+  @keyframes rotateRoundOut {
+	0% {
+	  transform: rotate(135deg);
+	}
+	100% {
+	  transform: rotate(0deg);
+	}
+  }
+  @keyframes panelScaleIn {
+	0% {
+	  transform: scale(0.95) translateY(-3rem);
+	}
+	100% {
+	  transform: scale(1) translateY(0);
+	}
+  }
+  @keyframes panelScaleOut {
+	0% {
+	  transform: scale(1) translateY(0);
+	}
+	100% {
+	  transform: scale(0.95) translateY(-3rem);
+	}
+  }
+  @keyframes emptyPanelScaleOut {
+	0% {
+	  transform: scale(0.95) translateY(0);
+	}
+	100% {
+	  transform: scale(0.9) translateY(-3rem);
+	}
+  }
+  @keyframes emptyPanelScaleIn {
+	0% {
+	  transform: scale(0.9) translateY(-3rem);
+	}
+	100% {
+	  transform: scale(0.95) translateY(0);
+	}
+  }
+  

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Birthday Login</title>
+	<link rel="stylesheet" href="./styles.css">
+	<script src="./script.js" defer></script>
+</head>
+<body>
+	<div class="cl-container">
+		<div class="cl-container-frames">
+			<button class="cl-btn cl-frame-switch-btn cl-animation" id="btn-switch-frame">
+				<span class="cl-icon-plus"></span>
+			</button>
+			<div class="cl-frame-reg cl-animation" id="panel-reg">
+				<p class="cl-frame-reg-title">HINTS</p>
+				<form class="cl-form">
+					<div class="cl-form-group hints">
+						<label class="cl-form-label" id="hint1">This person has self self obsessed and have and has a very short term memory  </label>
+						<label class="cl-form-label" id="line1">--------------</label>
+						<button class="hide" id="toggleButton1">Show Hint 1</button>
+					</div>
+					<div class="cl-form-group hints">
+						<label class="cl-form-label" id="hint2">Ye password aapse juda hua h or aap use daily use krte ho </label>
+						<label class="cl-form-label" id="line2">--------------</label>
+						<button class="hide" id="toggleButton2">Show Hint 2</button>
+					</div>
+					<div class="cl-form-group hints">
+						<label class="cl-form-label" id="hint3">hint 1 :- for username <br> hint 2 :-for password</label>
+						<label class="cl-form-label" id="line3">--------------</label>
+						<button class="hide" id="toggleButton3">Show Hint 3</button>
+					</div>
+				</form>
+			</div>
+			<div class="cl-frame-login cl-animation" id="panel-login">
+				<p class="cl-frame-login-title">LOGIN</p>
+				<form class="cl-form">
+					<div class="cl-form-group">
+						<label class="cl-form-label cl-animation">Username</label>
+						<input type="text" id="input-login-username">
+						<div class="cl-input-focus-line cl-animation"></div>
+					</div>
+					<div class="cl-form-group">
+						<label class="cl-form-label cl-animation">Password</label>
+						<input type="password" id="input-login-password">
+						<div class="cl-input-focus-line cl-animation"></div>
+					</div>
+					<div class="cl-form-group cl-hor-center">
+						<button type="button"
+								class="cl-btn cl-btn-login cl-animation"
+								id="btn-login"
+								onclick="redirect()"
+						>
+							<span>GO</span>
+						</button>
+					</div>
+				</form>
+			</div>
+			<div class="cl-frame-empty cl-animation" id="panel-empty"></div>
+		</div>
+	</div>
+</body>
+</html>
